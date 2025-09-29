@@ -1,5 +1,3 @@
-//import { createClient } from 'redis';
-
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('customerDetailsForm');
   const otherSourceContainer = document.getElementById('otherSourceContainer');
@@ -138,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     input.addEventListener('input', () => clearValidation(input));
   });
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     let isValid = true;
@@ -167,37 +165,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const formData = collectFormData();
-   
 
-    ////redis part
-
-    // const redisData = {
-    //       name: formData.name,
-    //       email: formData.email,
-    //       phoneNumber: formData.phone,
-    //       howHear: formData.hearAbout,
-    //       feedBack: formData.feedback,
-    //       city: formData.address.city
-    //     };
- 
-
-    // const client = createClient({
-    //     url: 'redis://root:anita@127.0.0.1:6379' 
-    // });
-
-    // client.connect();
-    // console.log('Connected to Redis!');
-    // client.add(redisData);
-
-    // client.disconnect();
-
+    // Save in localStorage
+    localStorage.setItem('customerFormData', JSON.stringify(formData));
 
     console.log('--- Form Data Submitted Successfully ---');
     console.log(formData);
     console.log('--------------------------------------');
 
-    successModal.style.display = 'flex';
-    setTimeout(clearForm, 500);
+    try {
+      // Send to backend server (Redis)
+      const res = await fetch('http://localhost:3000/submit', { // <-- Updated
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await res.json();
+      console.log('Server response:', result);
+
+      successModal.style.display = 'flex';
+      setTimeout(clearForm, 500);
+    } catch (err) {
+      console.error('Error sending data to server:', err);
+    }
   });
 
   successModal.addEventListener('click', (e) => {

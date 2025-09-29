@@ -55,10 +55,8 @@ body {
 
 .form-group.invalid {
   background-color: var(--light-red);
-  /* whole group background */
   border-radius: 6px;
   padding: 15px;
-  /* optional, so the background covers nicely */
   transition: background-color 0.3s;
 }
 
@@ -181,9 +179,7 @@ textarea {
 
 .radio-label input[type="radio"] {
   width: 20px;
-  /* width of the square */
   height: 20px;
-  /* height of the square */
   border: 2px solid var(--light-blue);
   margin-right: 8px;
   cursor: pointer;
