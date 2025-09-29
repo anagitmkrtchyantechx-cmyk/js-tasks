@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <form id="customerDetailsForm" class="form-card">
+            <h1 class="form-title">Customer Details:</h1>
+
+            <div class="form-group">
+                <legend class="required">Full Name</legend>
+                <div class="input-row">
+                    <div class="input-group">
+                        <input type="text" id="firstName" name="firstName" required>
+                        <p>First Name</p>
+                        <small class="error-message"></small>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="lastName" name="lastName" required>
+                        <p>Last Name</p>
+                        <small class="error-message"></small>
+                    </div>
+                </div>
+              </div>
+
+            <div class="form-group">
+                <legend class="required">Address</legend>
+                <div class="input-group">
+                    <input type="text" id="streetAddress1" name="streetAddress1" required>
+                    <p>Street Address</p>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="streetAddress2" name="streetAddress2">
+                    <p>Street Address Line 2</p>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <input type="text" id="city" name="city"  required>
+                        <p>City</p>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="stateProvince" name="stateProvince" required>
+                        <p>Province</p>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="postalZipCode" name="postalZipCode" required>
+                    <p>Postal/Zip Code</p>
+                </div>
+                      <small class="error-message"></small>
+              </div>
+
+            <div class="form-group">
+                <label for="phoneNumber" class="required">Phone Number</label>
+                <div class="input-group">
+                    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="(000) 000-0000" required data-validation-type="number-only">
+                    <small class="error-message"></small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" data-validation-type="email">
+                    <p>example@example.com</p>
+                    <h2></h2>
+                    <small class="error-message"></small>
+                </div>
+            </div>
+
+            <div class="form-group diff">
+              <label class="required">How did you hear about us?</label>
+                 <div class="custom-select-wrapper">
+                   <div class="custom-select">
+                        <div class="select-trigger">Please Select</div>
+                        <div class="options">
+                        <div class="option" data-value="Newspaper">Newspaper</div>
+                        <div class="option" data-value="Internet">Internet</div>
+                        <div class="option" data-value="Magazine">Magazine</div>
+                       <div class="option" data-value="Other">Other</div>
+                   </div>
+                   <input type="hidden" name="howHear" required>
+                  <small class="error-message"></small>
+                 </div>
+            </div>
+            
+
+
+            <div class="form-group" id="otherSourceContainer" style="display: none;">
+                <label for="otherSource" class="required">Other Source</label>
+                <div class="input-group">
+                    <input type="text" id="otherSource" name="otherSource" placeholder="Please specify">
+                    <small class="error-message"></small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="feedback">Feedback about us:</label>
+                <div class="input-group">
+                    <textarea id="feedback" name="feedback" rows="4"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="suggestions">Suggestions if any for further improvement:</label>
+                <div class="input-group">
+                    <textarea id="suggestions" name="suggestions" rows="4"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <legend>Will you be willing to recommend us?</legend>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="recommend" value="Yes">
+                        Yes
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="recommend" value="Maybe">
+                        Maybe
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="recommend" value="No">
+                        No
+                    </label>
+                </div>
+              </div>
+
+            <div class="form-group">
+                <label>Please give reference of any two people whom you feel:</label>
+                <table class="reference-table">
+                    <thead>
+                        <tr>
+                            <th class="Disappear-Cell"></th>
+                            <th class="Grey-Cell">Full Name</th>
+                            <th class="Grey-Cell">Address</th>
+                            <th class="Grey-Cell">Contact Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="Grey-Cell">1</td>
+                            <td><input type="text" name="refName1"></td>
+                            <td><input type="text" name="refAddress1"></td>
+                            <td><input type="text" name="refContact1"></td>
+                        </tr>
+                        <tr>
+                            <td class="Grey-Cell">2</td>
+                            <td><input type="text" name="refName2"></td>
+                            <td><input type="text" name="refAddress2"></td>
+                            <td><input type="text" name="refContact2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+                <div class="checkmark-circle">
+                    &#10003;
+                </div>
+                <h2 class="modal-title">Thank You!</h2>
+                <p class="modal-text">Your submission has been received.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
