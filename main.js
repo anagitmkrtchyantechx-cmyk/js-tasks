@@ -53,8 +53,6 @@ async function fetchUsers(includeHeader) {
   }
 }
 
-document.getElementById("with-header")
-  .addEventListener("click", () => fetchUsers(true));
-
-document.getElementById("without-header")
+document
+  .getElementById("without-header")
   .addEventListener("click", () => fetchUsers(false));
