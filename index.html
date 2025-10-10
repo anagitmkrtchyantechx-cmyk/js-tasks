@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lesson 6 Assignment</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>JavaScript Lesson 6 Assignment</h1>
+
+    <section class="section">
+      <h2>Task 1: User Profile (localStorage)</h2>
+      <form id="profile-form">
+        <input type="text" id="name" placeholder="Name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <button type="submit">Save Profile</button>
+      </form>
+    </section>
+
+    <section class="section">
+      <h2>Task 2: Temporary Note (sessionStorage)</h2>
+      <textarea
+        id="note"
+        rows="4"
+        placeholder="Write your note here..."
+      ></textarea>
+      <button id="save-note">Save Note</button>
+    </section>
+
+    <div id="cookie-banner" style="display: none">
+      This site uses cookies to improve experience.
+      <button id="accept-cookies">Accept</button>
+    </div>
+
+    <section class="section">
+      <h2>Task 4: Clear Storage</h2>
+      <button id="clear-all">Clear All</button>
+    </section>
+
+    <section class="section">
+      <h2>Task 5: Fetch a Joke</h2>
+      <button id="get-joke">Get Joke</button>
+      <div id="joke" style="margin-top: 10px"></div>
+    </section>
+
+    <section class="section">
+      <h2>Task 6: Countdown Timer</h2>
+      <button id="start-countdown">Start Countdown</button>
+      <div id="countdown" style="font-size: 24px; margin-top: 10px"></div>
+    </section>
+
+    <section class="section">
+      <h2>Task 7: Tick Logger</h2>
+      <button id="start-ticking">Start Ticking</button>
+      <button id="stop-ticking">Stop Ticking</button>
+      <div id="tick-log" style="margin-top: 10px"></div>
+    </section>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
