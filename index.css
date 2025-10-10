@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+  background: #f8f9fa;
+  color: #333;
+}
+h2 {
+  margin-top: 40px;
+}
+form,
+.section {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+input,
+textarea,
+button {
+  margin-top: 8px;
+  display: block;
+  width: 100%;
+  padding: 8px;
+}
+#cookie-banner {
+  background: #222;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+#cookie-banner button {
+  background: #4caf50;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  margin-left: 10px;
+  cursor: pointer;
+}
